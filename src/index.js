@@ -4,11 +4,11 @@ import App from "./App";
 
 import rootReducer from "./redux/root-reducer";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware, compose } from "redux";
+import {legacy_createStore as createStore, applyMiddleware, compose } from "redux";
 
 import thunkMiddleware from "redux-thunk";
 import loggerMiddleware from "./redux/logger";
-import monitorReducerEnhancer from "./redux/monitorReducer";
+import monitorReducerEnhancer from "./redux/monitorReducerEnhancer";
 const middlewareEnhancer = applyMiddleware(loggerMiddleware, thunkMiddleware);
 const composedEnhancers = compose(middlewareEnhancer, monitorReducerEnhancer);
 

@@ -181,11 +181,9 @@ button {
   width: 100%;
   list-style: none;
   margin: 0;
-  
-}
-.navigation{
   padding:0
 }
+
 
 .navigation li {
   display: flex;
@@ -203,7 +201,6 @@ button {
   background: #bfbfbf;
   color: #000;
   width: 100%;
-  padding: 20px;
 }
 
 .navigation li a:hover {

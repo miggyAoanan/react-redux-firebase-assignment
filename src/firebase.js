@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/database";
 
-var firebaseConfig = {
+let firebaseConfig = {
    
     apiKey: "AIzaSyDsX80jguDzFhPbAOG0lUKqYGKOhElqFEc",
     authDomain: "react-app-assignment-29f93.firebaseapp.com",

@@ -63,7 +63,7 @@ export const getUsers = () => {
           dispatch(getUsersSuccess({}));
         }
       } catch (error) {
-        dispatch(getUsersFail(error));
+        dispatch(getUsersFail());
       }
     });
   };
@@ -75,7 +75,7 @@ export const addUser = (user) => {
     firebaseDb.child("users").push(user, (err) => {
       dispatch(addUserSuccess())
       if (err) {
-        dispatch(addUserFail(err))
+        dispatch(addUserFail())
       }
     });
   };
@@ -87,7 +87,7 @@ export const editUser = (user, id) => {
     firebaseDb.child(`users/${id}`).set(user, (err) => {
       dispatch(editUserSuccess())
       if (err) {
-        dispatch(editUserFail(err))
+        dispatch(editUserFail())
       }
     });
   };
@@ -100,7 +100,7 @@ export const deleteUser = (id) => {
     firebaseDb.child(`users/${id}`).remove((err) => {
       deleteUserSuccess();
       if (err) {
-        dispatch(deletetUserFail(err));
+        dispatch(deletetUserFail());
       }
     });
   };

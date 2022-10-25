@@ -6,13 +6,9 @@ const initialState = {
   error: null,
 };
 
-const userReducer = (state = initialState, action) => {
+const userReducer = (state, action) => {
   switch (action.type) {
-    case types.GET_USERS_START:
-      return {
-        ...state,
-        loading: true,
-      };
+    
     case types.GET_USERS_SUCCESS:
       return {
         ...state,
@@ -25,6 +21,7 @@ const userReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       };
+    case types.GET_USERS_START:
     case types.ADD_USER_START:
     case types.DELETE_USER_START:
     case types.EDIT_USER_START:
@@ -49,7 +46,7 @@ const userReducer = (state = initialState, action) => {
         error: action.payload,
       };
     default:
-      return state;
+      return initialState;
   }
 };
 
